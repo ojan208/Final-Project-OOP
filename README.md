@@ -1,38 +1,57 @@
-# Project Name
+# Pong
 
 This repository is a final project (Java GUI) from Object-Oriented Programming Class, Teknik Informatika Universitas Padjadjaran. 
 
 [Challenge Guidelines](challenge-guideline.md)
 
-**Please create a description for this project here**
+**Implementasi dari game terkenal yaitu Pong dimana ada dua paddle yang masing-masing dimiliki oleh pemain A dan B. Tugas pemain adalah menggerakkan paddle miliknya dan menjaga bola agar tidak melewati paddle miliknya. Pemain kemudian akan mendapatkan skor dengan cara membiarkan pemain lawan gagal mengembalikan bola ke arena.**
 
 ## Credits
 | NPM           | Name        |
 | ------------- |-------------|
-| 140810xx00xx  | John Doe    |
-| 140810xx00xx  | Jane Doe    |
-| 140810xx00xx  | Lorem Ipsum |
+| 140810190001  | Dicky Rahma Hermawan    |
+| 140810190015  | Salsabila Karin    |
+| 140810190041  | Windu Nursetyadi |
 
 ## Change log
-- **[Sprint Planning](changelog/sprint-planning.md) - (planning date)** 
-   -  Short changes 1
-   - Short changes 2
+- **[Sprint Planning](changelog/sprint-planning.md) - (18/11/2020)** 
+   -  Diskusi awal, pembentukan challenge guidelines, perencanaan changelog
 
-- **[Sprint 1](changelog/sprint-1.md) - (date from x until x)** 
-   - Short changes 1
-   - Short changes 2
-
-- **[Sprint 2](changelog/sprint-2.md) - (date from x until x)** 
-   - Short changes 1
-   - Short changes 2
+- **[Sprint 1](changelog/sprint-1.md) - (18/11/2020 - 24/11/2020)** 
+   - Membuat Class Pong yang mengekstensi kelas JFrame
+     - Inisialisasi ukuran layar
+     - Fungsi kontrol keyboard pemain
+   - Membuat Class PongLogic yang mengekstensi kelas JPanel
+     - Inisialisasi nilai default untuk kecepatan bola
+     - Logika pantulan bola mengenai atap dan dasar window
+     - Logika pantulan bola mengenai paddle pemain
+     - Komputasi koordinat perpindahan bola
+     - Fungsi gambar bola dan paddle
+     - Fungsi increment score peserta
+ 
+- **[Sprint 2](changelog/sprint-2.md) - (25/11/2020 - 01/12/2020)** 
+   - Membuat tampilan menu dan pilihannya
+   - Membuat setting
+   - Merapikan antarmuka UI
    
-- **[Sprint 3](changelog/sprint-3.md) - (date from x until x)** 
-   - Short changes 1
-   - Short changes 2
+- **[Sprint 3](changelog/sprint-3.md) - (02/12/2020 - 08/12/2020)** 
+   - Merapikan antarmuka game yang kurang sesuai
+   - Error handling
+   - Mengimplementasikan challenge yang dapat diselesaikan
 
 ## Running The App
 
-TO;DO with steps
+- Tampilkan menu { Start Game (2P), Settings, Quit }
+- Untuk start game, tampilkan window game dan scoreboard di atas layar
+- Paddle pemain 1 akan muncul di sebelah kiri window, dan paddle pemain 2 akan muncul di sebelah kanan window
+- Bola akan muncul di tengah koordinat x dan y dari ukuran layar
+- Bola akan segera bergerak secara acak dengan kecepatan yang sudah ditentukan
+- Jika bola mengenai dasar atau atap layar, maka bola akan memantul kembali
+- Jika bola mengenai paddle pemain, maka bola akan memantul menjauhi paddle
+- Jika bola melewati paddle pemain, maka pemain lawan dari pemain yang paddle-nya dilewati skornya akan bertambah 1 dan keadaan bola dan paddle akan di-reset
+- Pada bagian settings, pemain dapat mengonfigurasi game berkaitan mengenai:
+   - Kecepatan bola;
+   - Kecepatan paddle;
 
 ## Classes Used
 
