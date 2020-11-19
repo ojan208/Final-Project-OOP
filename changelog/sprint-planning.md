@@ -1,25 +1,53 @@
 # Sprint Planning 
-| dd/mm/yyyy
+| 18/11/2020
 
 ### Team (Insert your name)
 | NPM           | Name        |
 | ------------- |-------------|
-| 140810xx00xx  | John Doe    |
-| 140810xx00xx  | Jane Doe    |
-| 140810xx00xx  | Lorem Ipsum |
+| 140810190001  | Dicky Rahma Hermawan    |
+| 140810190015  | Salsabila Karin    |
+| 140810190041  | Windu Nursetyadi |
 
 ## Sprint Backlog Keseluruhan 
 | ID  | Title/Desc | Asignee | 
 | --- | ---------- | ------- | 
-| 1.1 | Preparing the x | Jane Doe | 
-| 2.2 | Make the x | John Doe | 
+| 1.1 | Inisialisasi dasar kebutuhan JFrame | Dicky | 
+| 1.2 | Konstruksi main screen | Dicky | 
+| 1.3 | Inisialisasi kecepatan dan ukuran bola dan paddle | Dicky | 
+| 1.4 | Inisialisasi koordinat bola | Windu | 
+| 1.5 | Inisialisasi koordinat paddle | Karin | 
+| 1.6 | Konfigurasi gambar bola pada window | Windu | 
+| 1.7 | Konfigurasi gambar paddle pada window | Karin | 
+| 1.8 | Membuat aturan kontrol keyboard pemain | Dicky | 
+| 1.9 | Mengatur logika pantulan bola terhadap batas atap dan lantai | Windu | 
+| 1.10 | Mengatur logika pantulan bola terhadap paddle pemain A dan B | Karin | 
+| 1.11 | Mengatur logika perubahan pergerakan bola | Windu | 
+| 1.12 | Mengatur logika perubahan pergerakan paddle | Karin |
+| 1.13 | Mengatur logika scoring | Dicky |
+| 2.1 | Membuat tampilan menu dan pilihannya | TO;DO | 
+| 2.2 | Membuat setting | TO;DO | 
+| 2.3 | Merapikan antarmuka UI | TO;DO | 
+| 3.1 | Merapikan antarmuka game yang kurang sesuai | TO;DO | 
+| 3.2 | Error handling | TO;DO | 
+| 3.3 | Mengimplementasikan challenge yang dapat diselesaikan | TO;DO | 
 
 ## Sprint Backlog Plan (Sprint 1)
 | ID  | Title/Desc | Asignee | 
 | --- | ---------- | ------- | 
-| 1.1 | Preparing the x | Jane Doe | 
-| 2.2 | Make the x | John Doe | 
+| 1.1 | Inisialisasi dasar kebutuhan JFrame | Dicky | 
+| 1.2 | Konstruksi main screen | Dicky | 
+| 1.3 | Inisialisasi kecepatan dan ukuran bola dan paddle | Dicky | 
+| 1.4 | Inisialisasi koordinat bola | Windu | 
+| 1.5 | Inisialisasi koordinat paddle | Karin | 
+| 1.6 | Konfigurasi gambar bola pada window | Windu | 
+| 1.7 | Konfigurasi gambar paddle pada window | Karin | 
+| 1.8 | Membuat aturan kontrol keyboard pemain | Dicky | 
+| 1.9 | Mengatur logika pantulan bola terhadap batas atap dan lantai | Windu | 
+| 1.10 | Mengatur logika pantulan bola terhadap paddle pemain A dan B | Karin | 
+| 1.11 | Mengatur logika perubahan pergerakan bola | Windu | 
+| 1.12 | Mengatur logika perubahan pergerakan paddle | Karin |
+| 1.13 | Mengatur logika scoring | Dicky |
 
 ## Retrospective 
 
-Sprint kemarin dianggap terlalu sedikit sehingga diperlukan adanya penyesuaian tugas. Lorem ipsum dolor sit amet
+Dari perencanaan ini dapat dipastikan bahwa tugas yang akan dilakukan cukup banyak
