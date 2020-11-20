@@ -1,12 +1,12 @@
 # Scrum Report (Sprint 3)
 | From dd/mm/yyyy to dd/mm/yyyy
 
-## Team (Insert your name)
+## Team Winduisme
 | NPM           | Name        |
 | ------------- |-------------|
-| 140810xx00xx  | John Doe    |
-| 140810xx00xx  | Jane Doe    |
-| 140810xx00xx  | Lorem Ipsum |
+| 140810190001  | Dicky Rahma Hermawan    |
+| 140810190015  | Salsabila Karin    |
+| 140810190041  | Windu Nursetyadi |
 
 ## Sprint Overview
 | Planned (n)   | Completed (n) |

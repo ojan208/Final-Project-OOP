@@ -2,25 +2,28 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class KeyboardListener implements KeyListener {
-  private Paddle paddles;
+  private Arena arena;
 
-  public KeyboardListener(Paddle paddles) {
-    this.paddles = paddles;
+  public KeyboardListener(Arena arena) {
+    this.arena = arena;
   }
 
   @Override
   public void keyPressed(KeyEvent e) {
+    if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+      arena.initInstances();
+    }
     if (e.getKeyCode() == KeyEvent.VK_UP) {
-      paddles.moveB(+paddles.getPaddleDisplacement());
+      arena.getPaddles().moveB(-arena.getPaddles().getPaddleDisplacement());
     }
     if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-      paddles.moveB(-paddles.getPaddleDisplacement());
+      arena.getPaddles().moveB(+arena.getPaddles().getPaddleDisplacement());
     }
     if (e.getKeyCode() == KeyEvent.VK_W) {
-      paddles.moveA(+paddles.getPaddleDisplacement());
+      arena.getPaddles().moveA(-arena.getPaddles().getPaddleDisplacement());
     }
     if (e.getKeyCode() == KeyEvent.VK_S) {
-      paddles.moveA(-paddles.getPaddleDisplacement());
+      arena.getPaddles().moveA(+arena.getPaddles().getPaddleDisplacement());
     }
   }
 

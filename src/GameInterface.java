@@ -1,8 +1,8 @@
 import java.awt.GridLayout;
 import java.awt.Container;
 import java.awt.Dimension;
-import javax.swing.JTextArea;
 
+import javax.swing.JTextArea;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -10,9 +10,10 @@ import javax.swing.WindowConstants;
 
 public class GameInterface implements Runnable {
   private JFrame pongFrame;
+  private Arena arena;
 
   public GameInterface() {
-    // Constructor interface
+    this.arena = new Arena();
   }
 
   @Override
@@ -34,7 +35,9 @@ public class GameInterface implements Runnable {
   }
 
   private void createComponents(Container container) {
-
+    pongFrame.add(this.arena);
+    // listener untuk keyboard
+    pongFrame.addKeyListener(new KeyboardListener(this.arena));
   }
 
   public JFrame getFrame() {

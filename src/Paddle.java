@@ -1,51 +1,60 @@
+import java.awt.Color;
 import java.awt.Graphics;
 
-public class Paddle {
+public class Paddle extends Instances {
   // enumerator tipe paddle
   enum Types {
     PADDLE_A, PADDLE_B
   }
 
-  private static int paddleSize = 120;
-  private int aY, bY, paddleDisplacement;
+  private int aY, bY, paddleSize, paddleDisplacement;
 
   // konstruktor
-  public Paddle() {
+  public Paddle(int containerHeight, int containerWidth) {
+    super(containerHeight, containerWidth);
     this.paddleDisplacement = 15;
+    this.paddleSize = 120;
   }
 
   // getter koordinat Y dari paddle A
   public int getaY() {
-    return this.aY;
+    // isi getter untuk aY
   }
 
   // getter koordinat Y dari paddle B
   public int getbY() {
-    return this.bY;
+    // isi getter untuk bY
   }
 
   // getter kecepatan perpindahan paddle
   public int getPaddleDisplacement() {
-    return this.paddleDisplacement;
+    // isi getter untuk paddleDisplacement
   }
 
   // getter ukuran paddle
-  public static int getPaddleSize() {
-    return paddleSize;
+  public int getPaddleSize() {
+    // isi getter untuk paddleSize
+  }
+
+  // setter koordinat Y dari paddle A
+  public void setaY(int aY) {
+    // isi setter untuk aY
+  }
+
+  // setter koordinat Y dari paddle B
+  public void setbY(int bY) {
+    // isi setter untuk bY
   }
 
   public void moveA(int d) {
-    // masukkan logika pergerakan paddle A di sini (ganti getHeight() menjadi
-    // GameInterface)
-
+    // masukkan logika pergerakan paddle A di sini
   }
 
   public void moveB(int d) {
-    // masukkan logika pergerakan paddle B di sini (ganti getHeight() menjadi
-    // maxHeight)
+    // masukkan logika pergerakan paddle B di sini
   }
 
   public void draw(Graphics g) {
-    // masukkan aturan gambar paddle
+    // masukkan body untuk fungsionalitas draw ball di sini
   }
 }

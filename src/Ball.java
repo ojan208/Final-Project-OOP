@@ -1,6 +1,7 @@
+import java.awt.Color;
 import java.awt.Graphics;
 
-public class Ball {
+public class Ball extends Instances {
   // koordinat X dan Y bola
   private double ballX, ballY;
 
@@ -11,7 +12,8 @@ public class Ball {
   private int ballR;
 
   // konstruktor
-  public Ball() {
+  public Ball(int containerHeight, int containerWidth) {
+    super(containerHeight, containerWidth);
     this.dX = this.dY = 5.0;
     this.ballR = 8;
   }
@@ -23,24 +25,37 @@ public class Ball {
 
   // getter koordinat X bola
   public double getX() {
-    return this.ballX;
+    // isi getter koordinatX
   }
 
   // getter koordinat Y bola
   public double getY() {
-    return this.ballY;
+    // isi getter koordinatY
   }
 
   // getter radius bola
   public double getR() {
-    return this.ballR;
+    // isi getter radius ballR
+  }
+
+  public void setBallX(int ballX) {
+    // isi setter untuk ballX
+  }
+
+  public void setBallY(int ballY) {
+    // isi setter untuk ballY
   }
 
   public void move() {
-    // masukkan rumus update koordinat bola
+    // masukkan rumus update koordinat bola di sini
+  }
+
+  public boolean paddleCollision(Paddle paddle) {
+    // masukkan logika benturan bola ke paddle di sini, harus mengembalikan nilai
+    // boolean true untuk benturan
   }
 
   public void draw(Graphics g) {
-    // masukkan aturan gambar bola
+    // masukkan body untuk fungsionalitas draw ball di sini
   }
 }
