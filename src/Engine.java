@@ -14,9 +14,9 @@ public class Engine {
   }
 
   public void updateGame(Arena a) {
-    a.getBall().move();
+    a.getBall().move(a);
 
-    if (!a.getBall().paddleCollision(a.getPaddles())) {
+    if (!a.getBall().paddleCollision(a.getPaddles(), a, a.getScore()) {
       stop();
     }
 

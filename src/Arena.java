@@ -15,6 +15,7 @@ public class Arena extends JPanel {
   private Paddle paddle;
   private Engine engine;
   private Timer timer;
+  private Score score;
 
   public Arena() {
     super();
@@ -59,6 +60,10 @@ public class Arena extends JPanel {
 
   public Engine getEngine() {
     return this.engine;
+  }
+
+  public Score getScore() {
+    return this.score;
   }
 
   @Override

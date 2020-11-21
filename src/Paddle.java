@@ -18,22 +18,22 @@ public class Paddle extends Instances {
 
   // getter koordinat Y dari paddle A
   public int getaY() {
-    // isi getter untuk aY
+    
   }
 
   // getter koordinat Y dari paddle B
   public int getbY() {
-    // isi getter untuk bY
+    
   }
 
   // getter kecepatan perpindahan paddle
   public int getPaddleDisplacement() {
-    // isi getter untuk paddleDisplacement
+    return this.paddleDisplacement;
   }
 
   // getter ukuran paddle
   public int getPaddleSize() {
-    // isi getter untuk paddleSize
+    return this.paddleSize;
   }
 
   // setter koordinat Y dari paddle A
