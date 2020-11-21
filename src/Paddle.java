@@ -18,12 +18,12 @@ public class Paddle extends Instances {
 
   // getter koordinat Y dari paddle A
   public int getaY() {
-    
+    return this.aY;
   }
 
   // getter koordinat Y dari paddle B
   public int getbY() {
-    
+    return this.bY;
   }
 
   // getter kecepatan perpindahan paddle
@@ -38,23 +38,40 @@ public class Paddle extends Instances {
 
   // setter koordinat Y dari paddle A
   public void setaY(int aY) {
-    // isi setter untuk aY
+    this.aY = aY;
   }
 
   // setter koordinat Y dari paddle B
   public void setbY(int bY) {
-    // isi setter untuk bY
+    this.bY = bY;
   }
 
   public void moveA(int d) {
-    // masukkan logika pergerakan paddle A di sini
+    aY += d;
+		
+		// Agar paddle kiri tidak bisa keluar batas layar
+		if (aY <= paddleSize/2){
+			aY = paddleSize/2;
+		} else if (aY + paddleSize >= getHeight() + paddleSize/2){
+			aY = getHeight() - paddleSize/2;
+		} 
   }
 
   public void moveB(int d) {
-    // masukkan logika pergerakan paddle B di sini
+    bY += d;
+
+		// Agar paddle kanan tidak bisa keluar batas layar
+		if (bY <= paddleSize/2){
+			bY = paddleSize/2;
+		} else if (bY + paddleSize >= getHeight() + paddleSize/2){
+			bY = getHeight() - paddleSize/2;
+		}
   }
 
   public void draw(Graphics g) {
-    // masukkan body untuk fungsionalitas draw ball di sini
+    g.setColor(Color.BLUE);
+		g.fillRect(5, aY - paddleSize/2, 15, paddleSize);
+		g.setColor(Color.BLUE);
+		g.fillRect(getWidth() - 20, bY - paddleSize/2, 15, paddleSize)
   }
 }
