@@ -52,8 +52,8 @@ public class Paddle extends Instances {
 		// Agar paddle kiri tidak bisa keluar batas layar
 		if (aY <= paddleSize/2){
 			aY = paddleSize/2;
-		} else if (aY + paddleSize >= getHeight() + paddleSize/2){
-			aY = getHeight() - paddleSize/2;
+		} else if (aY + paddleSize >= maxHeight + paddleSize/2){
+			aY = maxHeight - paddleSize/2;
 		} 
   }
 
@@ -63,8 +63,8 @@ public class Paddle extends Instances {
 		// Agar paddle kanan tidak bisa keluar batas layar
 		if (bY <= paddleSize/2){
 			bY = paddleSize/2;
-		} else if (bY + paddleSize >= getHeight() + paddleSize/2){
-			bY = getHeight() - paddleSize/2;
+		} else if (bY + paddleSize >= maxHeight + paddleSize/2){
+			bY = maxHeight - paddleSize/2;
 		}
   }
 
