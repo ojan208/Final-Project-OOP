@@ -23,41 +23,65 @@ public class Ball extends Instances {
     this.dX = this.dY = velocity;
   }
 
-  // getter koordinat X bola
+  // getter koordinat bola
   public double getX() {
-    // isi getter koordinatX
+    return this.ballX;
   }
-
-  // getter koordinat Y bola
   public double getY() {
-    // isi getter koordinatY
+    return this.ballY;
   }
 
   // getter radius bola
   public double getR() {
-    // isi getter radius ballR
+    return this.ballR;
   }
 
+  // setter koordinat bola
   public void setBallX(int ballX) {
-    // isi setter untuk ballX
+    this.ballX = ballX;
   }
-
   public void setBallY(int ballY) {
-    // isi setter untuk ballY
+    this.ballY = ballY;
   }
 
-  public void move() {
-    // masukkan rumus update koordinat bola di sini
+  public void move(Arena arena) {
+    ballX += dX;
+    ballY += dY;
+
+    // Kalau keluar di sumbu Y
+    if(ballY + ballR > arena.getHeight()){
+      double out = ballY + ballR - arena.getHeight();
+      ballY = arena.getHeight() - ballR - out;
+      dY = -dY;
+    }
+    if(ballY - ballR < 0){
+      double out = ballR - ballY;
+      ballY = ballR + out;
+      dY = -dY;
+    } 
   }
 
-  public Paddle.Player paddleCollision(Paddle paddle) {
-    // masukkan aturan untuk tumbukan bola dengan paddle, nilai Paddle.Player
-    // dikembalikan untuk skoring (mis. Paddle.Player.PADDLE_A untuk skor pemain 1)
-    // jika bola masih menumbuk paddle (tidak keluar arena) beri return
-    // Paddle.Player.NONE
+  public boolean paddleCollision(Paddle paddle, Arena arena, Score score) {
+    // cek apakah bola melewati paddle kiri
+    if((ballX - ballR < 15) && (ballY < paddle.getaY() + paddle.getPaddleSize() / 2) && (ballY > paddle.getaY() + paddle.getPaddleSize() / 2)){
+      dX = -dX;
+    } else if(ballX - ballR < 0){  // apabila bola melewati paddle 
+      score.incrementA();
+    }
+
+    // cek apakah bola melewati paddle kanan
+    if((ballX + ballY > arena.getWidth() - 15) && (ballY < paddle.getbY() + paddle.getPaddleSize() / 2) && (ballY > paddle.getbY() - paddle.getPaddleSize() / 2)){
+      dX = -dX;
+    } else if(ballX - ballR < 0){ // apabila bola melewati paddle
+      score.incrementB();
+    }
   }
 
   public void draw(Graphics g) {
-    // masukkan body untuk fungsionalitas draw ball di sini
+    int x = (int) (ballX - ballR);
+    int y = (int) (ballY - ballR);
+    int size = 2 * ballR;
+    g.setColor(Color.RED);
+    g.fillOval(x, y, size, size);
   }
 }

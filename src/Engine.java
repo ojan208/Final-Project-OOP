@@ -16,7 +16,7 @@ public class Engine {
   }
 
   public void updateGame(Arena a) {
-    a.getBall().move();
+    a.getBall().move(a);
 
     Paddle.Player getScorer = a.getBall().paddleCollision(a.getPaddles());
 

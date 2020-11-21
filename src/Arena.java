@@ -62,6 +62,10 @@ public class Arena extends JPanel {
     return this.engine;
   }
 
+  public Score getScore() {
+    return this.score;
+  }
+
   @Override
   protected void paintComponent(Graphics g) {
     super.paintComponent(g);
