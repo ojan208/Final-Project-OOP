@@ -1,17 +1,27 @@
 public class Score {
-    private int aScore;
-    private int bScore;
+  private int p1_score, p2_score;
 
-    public Score(){
-        this.aScore = 0;
-        this.bScore = 0;
-    }
+  public Score() {
+    p1_score = p2_score = 0;
+  }
 
-    public int incrementA(){
-        return this.aScore += 1;
-    }
+  public void addP1Score() {
+    p1_score++;
+  }
 
-    public int incrementB(){
-        return this.bScore += 1;
-    }
+  public void addP2Score() {
+    p2_score++;
+  }
+
+  public int getP1Score() {
+    return p1_score;
+  }
+
+  public int getP2Score() {
+    return p2_score;
+  }
+
+  public void reset() {
+    p1_score = p2_score = 0;
+  }
 }

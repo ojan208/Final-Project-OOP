@@ -3,8 +3,8 @@ import java.awt.Graphics;
 
 public class Paddle extends Instances {
   // enumerator tipe paddle
-  enum Types {
-    PADDLE_A, PADDLE_B
+  enum Player {
+    NONE, PADDLE_A, PADDLE_B
   }
 
   private int aY, bY, paddleSize, paddleDisplacement;

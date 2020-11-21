@@ -1,5 +1,4 @@
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -20,7 +19,8 @@ public class Arena extends JPanel {
   public Arena() {
     super();
     super.setBackground(Color.BLACK);
-    this.engine = new Engine();
+    this.score = new Score();
+    this.engine = new Engine(this.score);
 
     Arena arena = this;
     this.timer = new Timer(10, new ActionListener() {
@@ -73,6 +73,10 @@ public class Arena extends JPanel {
       this.ball.draw(g);
       this.paddle.draw(g);
 
+      g.setFont(new Font("Press Start 2P", Font.PLAIN, 30));
+      g.drawString(Integer.toString(score.getP1Score()), getWidth() / 4, getHeight() / 5);
+      g.drawString(":", getWidth() / 2, getHeight() / 5);
+      g.drawString(Integer.toString(score.getP2Score()), getWidth() * 3 / 4, getHeight() / 5);
     } else {
       String message = "Press start to continue";
 
@@ -84,11 +88,11 @@ public class Arena extends JPanel {
 
       g.drawImage(i, getWidth() / 2 - image_w / 2, getHeight() / 2 - image_h / 2, this);
 
-      g.setFont(new Font("Arial", Font.PLAIN, 14));
+      g.setFont(new Font("Press Start 2P", Font.PLAIN, 14));
       g.setColor(Color.WHITE);
       int string_h = g.getFontMetrics().getHeight();
       int string_w = g.getFontMetrics().stringWidth(message);
-      g.drawString(message, getWidth() / 2 - string_w / 2, getHeight() / 2 - string_h / 2 + i.getHeight(this));
+      g.drawString(message, getWidth() / 2 - string_w / 2, getHeight() / 2 - string_h / 2 + i.getHeight(this) + 20);
     }
   }
 }
