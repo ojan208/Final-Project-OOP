@@ -8,16 +8,16 @@ public class Settings {
   private Ball ball;
 
   // getter kecepatan perpindahan paddle A atau B
-  public int getPaddleDisplacement(Paddle.Types type) {
-    if (type == Paddle.Types.PADDLE_A) {
+  public int getPaddleDisplacement(Paddle.Player type) {
+    if (type == Paddle.Player.PADDLE_A) {
       return this.pd_A_displacement;
     }
     return this.pd_B_displacement;
   }
 
   // setter kecepatan perpindahan paddle A atau B
-  public void setPaddleDisplacement(Paddle.Types type, int displacement) {
-    if (type == Paddle.Types.PADDLE_A) {
+  public void setPaddleDisplacement(Paddle.Player type, int displacement) {
+    if (type == Paddle.Player.PADDLE_A) {
       this.pd_A_displacement = displacement;
     }
     this.pd_B_displacement = displacement;

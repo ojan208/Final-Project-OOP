@@ -50,9 +50,11 @@ public class Ball extends Instances {
     // masukkan rumus update koordinat bola di sini
   }
 
-  public boolean paddleCollision(Paddle paddle) {
-    // masukkan logika benturan bola ke paddle di sini, harus mengembalikan nilai
-    // boolean true untuk benturan
+  public Paddle.Player paddleCollision(Paddle paddle) {
+    // masukkan aturan untuk tumbukan bola dengan paddle, nilai Paddle.Player
+    // dikembalikan untuk skoring (mis. Paddle.Player.PADDLE_A untuk skor pemain 1)
+    // jika bola masih menumbuk paddle (tidak keluar arena) beri return
+    // Paddle.Player.NONE
   }
 
   public void draw(Graphics g) {
