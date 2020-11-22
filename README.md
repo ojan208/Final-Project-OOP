@@ -18,16 +18,20 @@ This repository is a final project (Java GUI) from Object-Oriented Programming C
    -  Diskusi awal, pembentukan challenge guidelines, perencanaan changelog
 
 - **[Sprint 1](changelog/sprint-1.md) - (18/11/2020 - 24/11/2020)** 
-   - Membuat Class Pong yang mengekstensi kelas JFrame
-     - Inisialisasi ukuran layar
-     - Fungsi kontrol keyboard pemain
-   - Membuat Class PongLogic yang mengekstensi kelas JPanel
-     - Inisialisasi nilai default untuk kecepatan bola
-     - Logika pantulan bola mengenai atap dan dasar window
-     - Logika pantulan bola mengenai paddle pemain
-     - Komputasi koordinat perpindahan bola
-     - Fungsi gambar bola dan paddle
-     - Fungsi increment score peserta
+   - Inisialisasi dasar kebutuhan JFrame
+   - Konstruksi main screen
+   - Inisialisasi kecepatan dan ukuran bola dan paddle
+   - Inisialisasi koordinat bola
+   - Inisialisasi koordinat paddle
+   - Konfigurasi gambar bola pada window
+   - Konfigurasi gambar paddle pada window
+   - Membuat aturan kontrol keyboard pemain
+   - Mengatur logika pantulan bola terhadap batas atap dan lantai
+   - Mengatur logika pantulan bola terhadap paddle pemain A dan B
+   - Mengatur logika perubahan pergerakan bola
+   - Mengatur logika perpindahan paddle
+   - Mengatur logika scoring
+ 
  
 - **[Sprint 2](changelog/sprint-2.md) - (25/11/2020 - 01/12/2020)** 
    - Membuat tampilan menu dan pilihannya
