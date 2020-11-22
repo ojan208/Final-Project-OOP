@@ -48,30 +48,30 @@ public class Paddle extends Instances {
 
   public void moveA(int d) {
     aY += d;
-		
-		// Agar paddle kiri tidak bisa keluar batas layar
-		if (aY <= paddleSize/2){
-			aY = paddleSize/2;
-		} else if (aY + paddleSize >= maxHeight + paddleSize/2){
-			aY = maxHeight - paddleSize/2;
-		} 
+
+    // Agar paddle kiri tidak bisa keluar batas layar
+    if (aY <= paddleSize / 2) {
+      aY = paddleSize / 2;
+    } else if (aY + paddleSize >= maxHeight + paddleSize / 2) {
+      aY = maxHeight - paddleSize / 2;
+    }
   }
 
   public void moveB(int d) {
     bY += d;
 
-		// Agar paddle kanan tidak bisa keluar batas layar
-		if (bY <= paddleSize/2){
-			bY = paddleSize/2;
-		} else if (bY + paddleSize >= maxHeight + paddleSize/2){
-			bY = maxHeight - paddleSize/2;
-		}
+    // Agar paddle kanan tidak bisa keluar batas layar
+    if (bY <= paddleSize / 2) {
+      bY = paddleSize / 2;
+    } else if (bY + paddleSize >= maxHeight + paddleSize / 2) {
+      bY = maxHeight - paddleSize / 2;
+    }
   }
 
   public void draw(Graphics g) {
-    g.setColor(Color.BLUE);
-		g.fillRect(5, aY - paddleSize/2, 15, paddleSize);
-		g.setColor(Color.BLUE);
-		g.fillRect(getWidth() - 20, bY - paddleSize/2, 15, paddleSize)
+    g.setColor(Color.WHITE);
+    g.fillRect(5, aY - paddleSize / 2, 15, paddleSize);
+    g.setColor(Color.WHITE);
+    g.fillRect(maxWidth - 20, bY - paddleSize / 2, 15, paddleSize);
   }
 }

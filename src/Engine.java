@@ -1,10 +1,8 @@
 public class Engine {
   private boolean isRunning;
-  private Score score;
 
-  public Engine(Score score) {
+  public Engine() {
     this.isRunning = false;
-    this.score = score;
   }
 
   public void start() {
@@ -18,14 +16,9 @@ public class Engine {
   public void updateGame(Arena a) {
     a.getBall().move(a);
 
-    Paddle.Player getScorer = a.getBall().paddleCollision(a.getPaddles());
-
-    if (getScorer != Paddle.Player.NONE) {
-      if (getScorer == Paddle.Player.PADDLE_A) {
-        score.addP1Score();
-      } else if (getScorer == Paddle.Player.PADDLE_B) {
-        score.addP2Score();
-      }
+    // cek tumbukan bola terhadap paddle, jika tidak terjadi tumbukan, maka game
+    // akan masuk ke stop state
+    if (!a.getBall().paddleCollision(a.getPaddles(), a.getScore())) {
       stop();
     }
 

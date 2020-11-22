@@ -19,10 +19,11 @@ public class Arena extends JPanel {
   public Arena() {
     super();
     super.setBackground(Color.BLACK);
-    this.score = new Score();
-    this.engine = new Engine(this.score);
+    this.engine = new Engine();
 
     Arena arena = this;
+
+    // update pada game, per 10 milidetik = 1x update
     this.timer = new Timer(10, new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
@@ -36,9 +37,15 @@ public class Arena extends JPanel {
 
   public void initInstances() {
     if (!engine.getRunningState()) {
+      // inisialisasi instance ball dan paddle setiap kali start
       this.engine.start();
       this.ball = new Ball(getHeight(), getWidth());
       this.paddle = new Paddle(getHeight(), getWidth());
+
+      // inisialisasi score hanya dilakukan sekali
+      if (this.score == null) {
+        this.score = new Score(getHeight(), getWidth());
+      }
 
       this.paddle.setaY(getHeight() / 2);
       this.paddle.setbY(getHeight() / 2);
@@ -70,13 +77,10 @@ public class Arena extends JPanel {
   protected void paintComponent(Graphics g) {
     super.paintComponent(g);
     if (this.engine.getRunningState()) {
+      // gambar semua instance dalam arena
       this.ball.draw(g);
       this.paddle.draw(g);
-
-      g.setFont(new Font("Press Start 2P", Font.PLAIN, 30));
-      g.drawString(Integer.toString(score.getP1Score()), getWidth() / 4, getHeight() / 5);
-      g.drawString(":", getWidth() / 2, getHeight() / 5);
-      g.drawString(Integer.toString(score.getP2Score()), getWidth() * 3 / 4, getHeight() / 5);
+      this.score.draw(g);
     } else {
       String message = "Press start to continue";
 
