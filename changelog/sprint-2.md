@@ -1,5 +1,5 @@
 # Scrum Report (Sprint 2)
-| From dd/mm/yyyy to dd/mm/yyyy
+| From 25/11/2020 to 01/11/2020
 
 ## Team Winduisme
 | NPM           | Name        |
@@ -11,14 +11,15 @@
 ## Sprint Overview
 | Planned (n)   | Completed (n) |
 | ------------- |-------------- |
-| n             | n             |
+| 3             | n             |
 
 ## Sprint 2 Backlog
 
 | ID  | Title/Desc | Asignee | Status |
 | --- | ---------- | ------- | ------ |
-| 2.1 | Preparing the x | Jane Doe | DONE |
-| 2.2 | Make the x | John Doe | FAILED |
+| 2.1 | Membuat tampilan menu dan pilihannya | Karin | TO;DO | 
+| 2.2 | Membuat setting | Dicky | TO;DO |
+| 2.3 | Merapikan antarmuka UI | Windu | TO;DO | 
 
 ## Retrospective 
 
