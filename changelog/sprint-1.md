@@ -32,7 +32,7 @@
 | 1.13 | Mengatur logika scoring | Dicky | DONE |
 ## Retrospective 
 
-Sprint kemarin dianggap terlalu sedikit sehingga diperlukan adanya penyesuaian tugas. Lorem ipsum dolor sit amet
+Sprint pertama dirasa cukup baik dan lancar. Penggunaan project board dan issues dilaksanakan dengan cukup optimal.
 
 ## Next Sprint Backlog (Sprint 2)
 | ID  | Title/Desc | Asignee | 
