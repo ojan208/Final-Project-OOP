@@ -37,7 +37,7 @@ Sprint pertama dirasa cukup baik dan lancar. Penggunaan project board dan issues
 ## Next Sprint Backlog (Sprint 2)
 | ID  | Title/Desc | Asignee | 
 | --- | ---------- | ------- | 
-| 2.1 | Membuat tampilan menu dan pilihannya | ??? | 
-| 2.2 | Membuat setting | ??? | 
-| 2.3 | Merapikan antarmuka UI | ??? | 
+| 2.1 | Membuat tampilan menu dan pilihannya | Karin | 
+| 2.2 | Membuat setting | Dicky | 
+| 2.3 | Merapikan antarmuka UI | Windu | 
 | ~ | Refaktor kode (if any) | All |
