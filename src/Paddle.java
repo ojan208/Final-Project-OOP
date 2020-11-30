@@ -2,26 +2,20 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class Paddle extends Instances {
-  // enumerator tipe paddle
-  enum Player {
-    NONE, PADDLE_A, PADDLE_B
-  }
-
   private int aY, bY, paddleSize, paddleDisplacement;
 
   // konstruktor
-  public Paddle(int containerHeight, int containerWidth) {
-    super(containerHeight, containerWidth);
-    this.paddleDisplacement = 15;
+  public Paddle() {
+    this.paddleDisplacement = 5;
     this.paddleSize = 120;
   }
 
-  // getter koordinat Y dari paddle A
+  // getter koordinat y dari paddle A
   public int getaY() {
     return this.aY;
   }
 
-  // getter koordinat Y dari paddle B
+  // getter koordinat y dari paddle B
   public int getbY() {
     return this.bY;
   }
@@ -36,20 +30,26 @@ public class Paddle extends Instances {
     return this.paddleSize;
   }
 
-  // setter koordinat Y dari paddle A
+  // setter koordinat y dari paddle A
   public void setaY(int aY) {
     this.aY = aY;
   }
 
-  // setter koordinat Y dari paddle B
+  // setter koordinat y dari paddle B
   public void setbY(int bY) {
     this.bY = bY;
   }
 
-  public void moveA(int d) {
-    aY += d;
+  // setter ukuran panjang paddle
+  public void setPaddleSize(int size) {
+    this.paddleSize = size;
+  }
 
-    // Agar paddle kiri tidak bisa keluar batas layar
+  // logika pergerakan paddle A
+  public void moveA(String direction) {
+    aY += (direction == "UP") ? -this.paddleDisplacement : +this.paddleDisplacement;
+
+    // agar paddle A tidak bisa keluar batas layar
     if (aY <= paddleSize / 2) {
       aY = paddleSize / 2;
     } else if (aY + paddleSize >= maxHeight + paddleSize / 2) {
@@ -57,10 +57,11 @@ public class Paddle extends Instances {
     }
   }
 
-  public void moveB(int d) {
-    bY += d;
+  // logika pergerakan paddle B
+  public void moveB(String direction) {
+    bY += (direction == "UP") ? -this.paddleDisplacement : +this.paddleDisplacement;
 
-    // Agar paddle kanan tidak bisa keluar batas layar
+    // agar paddle B tidak bisa keluar batas layar
     if (bY <= paddleSize / 2) {
       bY = paddleSize / 2;
     } else if (bY + paddleSize >= maxHeight + paddleSize / 2) {
@@ -68,10 +69,11 @@ public class Paddle extends Instances {
     }
   }
 
+  // method draw untuk paddle
   public void draw(Graphics g) {
     g.setColor(Color.WHITE);
-    g.fillRect(5, aY - paddleSize / 2, 15, paddleSize);
+    g.fillRect(5, aY - paddleSize / 2, 10, paddleSize);
     g.setColor(Color.WHITE);
-    g.fillRect(maxWidth - 20, bY - paddleSize / 2, 15, paddleSize);
+    g.fillRect(maxWidth - 20, bY - paddleSize / 2, 10, paddleSize);
   }
 }

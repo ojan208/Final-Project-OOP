@@ -2,8 +2,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class Ball extends Instances {
-  // koordinat X dan Y bola
+  // koordinat x dan y bola
   private double ballX, ballY;
+
+  // kecepatan translasi bola
+  private double velocity;
 
   // kecepatan translasi bola menurut koordinat X dan Y
   private double dX, dY;
@@ -12,22 +15,28 @@ public class Ball extends Instances {
   private int ballR;
 
   // konstruktor
-  public Ball(int containerHeight, int containerWidth) {
-    super(containerHeight, containerWidth);
-    this.dX = this.dY = 5.0;
+  public Ball() {
+    this.velocity = this.dX = this.dY = 5.0;
     this.ballR = 8;
+  }
+
+  // getter perubahan kecepatan bola
+  public double getVelocity() {
+    return this.velocity;
   }
 
   // setter perubahan kecepatan bola
   public void setVelocity(double velocity) {
+    this.velocity = velocity;
     this.dX = this.dY = velocity;
   }
 
-  // getter koordinat bola
+  // getter koordinat x bola
   public double getX() {
     return this.ballX;
   }
 
+  // getter koordinat y bola
   public double getY() {
     return this.ballY;
   }
@@ -37,25 +46,29 @@ public class Ball extends Instances {
     return this.ballR;
   }
 
-  // setter koordinat bola
+  // setter koordinat x bola
   public void setBallX(int ballX) {
     this.ballX = ballX;
   }
 
+  // setter koordinat y bola
   public void setBallY(int ballY) {
     this.ballY = ballY;
   }
 
-  public void move(Arena arena) {
+  // logika pergerakan bola
+  public void move() {
     ballX += dX;
     ballY += dY;
 
-    // Kalau keluar di sumbu Y
-    if (ballY + ballR > arena.getHeight()) {
-      double out = ballY + ballR - arena.getHeight();
-      ballY = arena.getHeight() - ballR - out;
+    // misal bola keluar di sumbu y (lantai)
+    if (ballY + ballR > maxHeight) {
+      double out = ballY + ballR - maxHeight;
+      ballY = maxHeight - ballR - out;
       dY = -dY;
     }
+
+    // misal bola keluar di sumbu y (atap)
     if (ballY - ballR < 0) {
       double out = ballR - ballY;
       ballY = ballR + out;
@@ -63,6 +76,8 @@ public class Ball extends Instances {
     }
   }
 
+  // logika tumbukan bola, akan mengembalikan boolean true jika terjadi tumbukan
+  // dan false jika tidak terjadi tumbukan
   public boolean paddleCollision(Paddle paddle, Score score) {
     if ((ballX - ballR < 15) && (ballY < paddle.getaY() + paddle.getPaddleSize() / 2)
         && (ballY > paddle.getaY() - paddle.getPaddleSize() / 2)) {
@@ -80,6 +95,7 @@ public class Ball extends Instances {
     return true;
   }
 
+  // method draw untuk bola
   public void draw(Graphics g) {
     int x = (int) (ballX - ballR);
     int y = (int) (ballY - ballR);
