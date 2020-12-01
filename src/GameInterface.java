@@ -25,9 +25,6 @@ public class GameInterface implements Runnable {
     // fullscreen
     pongFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
-    // set ukuran window minimum menjadi 1200px x 800px
-    pongFrame.setMinimumSize(new Dimension(1200, 800));
-
     // ketika window di-close, maka akan exit program
     pongFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 

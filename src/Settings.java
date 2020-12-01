@@ -3,6 +3,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 
 public class Settings extends Instances {
+  private String title = "SETTINGS";
   private String[] settingsList = { "Ball Speed : ", "Paddle Size : ", "Back" };
   private int settingsState;
   private int s_ballVelocity, s_paddleSize;
@@ -46,24 +47,25 @@ public class Settings extends Instances {
   public void draw(Graphics g) {
     g.setFont(new Font("Press Start 2P", Font.PLAIN, 14));
     g.setColor(Color.WHITE);
-    g.drawString(settingsList[0], maxWidth * 3 / 7, maxHeight * 2 / 5);
-    g.drawString(settingsList[1], maxWidth * 3 / 7, maxHeight * 3 / 5);
-    g.drawString(settingsList[2], maxWidth * 3 / 7, maxHeight * 4 / 5);
+    g.drawString(title, maxWidth * 3 / 7, maxHeight * 20 / 50);
+    g.drawString(settingsList[0], maxWidth * 3 / 7, maxHeight * 25 / 50);
+    g.drawString(settingsList[1], maxWidth * 3 / 7, maxHeight * 30 / 50);
+    g.drawString(settingsList[2], maxWidth * 3 / 7, maxHeight * 35 / 50);
 
     // menyesuaikan dengan state saat ini, akan muncul kursor di sebelah kiri dan
     // indikator nilainya di sebelah kanan
     if (settingsState == 0) {
-      String string = "- " + Integer.toString(s_ballVelocity) + " +";
+      String string = "<   " + Integer.toString(s_ballVelocity) + "   >";
       int string_w = g.getFontMetrics().stringWidth(settingsList[0]);
-      g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * 2 / 5);
-      g.drawString(string, maxWidth * 3 / 7 + string_w + 30, maxHeight * 2 / 5);
+      g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * 25 / 50);
+      g.drawString(string, maxWidth * 3 / 7 + string_w + 30, maxHeight * 25 / 50);
     } else if (settingsState == 1) {
-      String string = "- " + Integer.toString(s_paddleSize) + " +";
+      String string = "<   " + Integer.toString(s_paddleSize) + "   >";
       int string_w = g.getFontMetrics().stringWidth(settingsList[1]);
-      g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * 3 / 5);
-      g.drawString(string, maxWidth * 3 / 7 + string_w + 30, maxHeight * 3 / 5);
+      g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * 30 / 50);
+      g.drawString(string, maxWidth * 3 / 7 + string_w + 30, maxHeight * 30 / 50);
     } else if (settingsState == 2) {
-      g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * 4 / 5);
+      g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * 35 / 50);
     }
   }
 }

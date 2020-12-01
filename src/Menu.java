@@ -3,6 +3,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 
 public class Menu extends Instances {
+  private String title = "MAIN MENU";
   private String[] menuList = { "Start Game (2 Players)", "Settings", "Quit" };
   private int menuState;
 
@@ -39,18 +40,25 @@ public class Menu extends Instances {
   public void draw(Graphics g) {
     g.setFont(new Font("Press Start 2P", Font.PLAIN, 14));
     g.setColor(Color.WHITE);
-    g.drawString(menuList[0], maxWidth * 3 / 7, maxHeight * 2 / 5);
-    g.drawString(menuList[1], maxWidth * 3 / 7, maxHeight * 3 / 5);
-    g.drawString(menuList[2], maxWidth * 3 / 7, maxHeight * 4 / 5);
+    g.drawString(title, maxWidth * 3 / 7, maxHeight * 20 / 50);
+    g.drawString(menuList[0], maxWidth * 3 / 7, maxHeight * 25 / 50);
+    g.drawString(menuList[1], maxWidth * 3 / 7, maxHeight * 30 / 50);
+    g.drawString(menuList[2], maxWidth * 3 / 7, maxHeight * 35 / 50);
 
     // menyesuaikan dengan state saat ini, akan muncul kursor di sebelah kiri dan
     // indikator nilainya di sebelah kanan
     if (menuState == 0) {
-      g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * 2 / 5);
+      g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * 25 / 50);
     } else if (menuState == 1) {
-      g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * 3 / 5);
+      g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * 30 / 50);
     } else if (menuState == 2) {
-      g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * 4 / 5);
+      g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * 35 / 50);
+    } else if (menuState == 3) {
+      g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * 25 / 50);
+      menuState = 0;
+    } else if (menuState == -1){
+      g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * 35 / 50);
+      menuState = 2;
     }
   }
 }
