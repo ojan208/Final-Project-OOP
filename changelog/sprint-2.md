@@ -17,9 +17,9 @@
 
 | ID  | Title/Desc | Asignee | Status |
 | --- | ---------- | ------- | ------ |
-| 2.1 | Membuat tampilan menu dan pilihannya | Karin | TO;DO | 
-| 2.2 | Membuat setting | Dicky | TO;DO |
-| 2.3 | Merapikan antarmuka UI | Windu | TO;DO | 
+| 2.1 | Membuat tampilan menu dan pilihannya | Karin | Done | 
+| 2.2 | Membuat setting | Dicky | Done |
+| 2.3 | Merapikan antarmuka UI | Windu | Done | 
 
 ## Retrospective 
 
