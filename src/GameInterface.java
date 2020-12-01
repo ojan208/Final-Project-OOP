@@ -1,5 +1,4 @@
 import java.awt.Container;
-import java.awt.Dimension;
 
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
@@ -44,10 +43,10 @@ public class GameInterface implements Runnable {
 
   private void createComponents(Container container) {
     // menambahkan arena pada container
-    pongFrame.add(arena);
+    pongFrame.add(this.arena);
 
     // listener untuk keyboard
-    pongFrame.addKeyListener(keyboardListener);
+    pongFrame.addKeyListener(this.keyboardListener);
   }
 
   public JFrame getFrame() {
