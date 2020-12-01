@@ -23,7 +23,7 @@
 
 ## Retrospective 
 
-Sprint kemarin dianggap terlalu sedikit sehingga diperlukan adanya penyesuaian tugas. Lorem ipsum dolor sit amet
+Dalam rapat sprint kemarin, kelompok juga merencanakan untuk mengatur tugas untuk sprint 3. Selain itu, tidak ada kendala
 
 ## Next Sprint Backlog (Sprint 3)
 | ID  | Title/Desc | Asignee | 
