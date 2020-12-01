@@ -24,12 +24,12 @@
 | 1.11 | Mengatur logika perubahan pergerakan bola | Windu | 
 | 1.12 | Mengatur logika perubahan pergerakan paddle | Karin |
 | 1.13 | Mengatur logika scoring | Dicky |
-| 2.1 | Membuat tampilan menu dan pilihannya | TO;DO | 
-| 2.2 | Membuat setting | TO;DO | 
-| 2.3 | Merapikan antarmuka UI | TO;DO | 
-| 3.1 | Merapikan antarmuka game yang kurang sesuai | TO;DO | 
-| 3.2 | Error handling | TO;DO | 
-| 3.3 | Mengimplementasikan challenge yang dapat diselesaikan | TO;DO | 
+| 2.1 | Membuat tampilan menu dan pilihannya | Karin | 
+| 2.2 | Membuat setting | Dicky | 
+| 2.3 | Merapikan antarmuka UI | Windu | 
+| 3.1 | Merapikan antarmuka game yang kurang sesuai | Karin | 
+| 3.2 | Bug fixing | Dicky | 
+| 3.3 | Mengimplementasikan challenge yang dapat diselesaikan | Windu | 
 
 ## Sprint Backlog Plan (Sprint 1)
 | ID  | Title/Desc | Asignee | 
