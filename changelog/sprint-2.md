@@ -28,5 +28,6 @@ Sprint kemarin dianggap terlalu sedikit sehingga diperlukan adanya penyesuaian t
 ## Next Sprint Backlog (Sprint 3)
 | ID  | Title/Desc | Asignee | 
 | --- | ---------- | ------- | 
-| 3.1 | Preparing the x | Jane Doe | 
-| 3.2 | Make the x | John Doe | 
+| 3.1 | Merapikan antarmuka game yang kurang sesuai | Karin | 
+| 3.2 | Bug fixing | Dicky | 
+| 3.3 | Mengimplementasikan challenge yang dapat diselesaikan | Windu |
