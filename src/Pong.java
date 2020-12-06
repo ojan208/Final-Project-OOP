@@ -1,3 +1,5 @@
+import core.*;
+
 import javax.swing.SwingUtilities;
 
 public class Pong {

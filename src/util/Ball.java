@@ -1,6 +1,9 @@
+package util;
+
 import java.awt.Graphics;
 
 public class Ball extends Instances {
+  // untuk menjaga bola tidak terperangkap paddle
   private int bouncingToken;
 
   // koordinat x dan y bola

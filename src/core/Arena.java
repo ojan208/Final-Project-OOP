@@ -1,4 +1,6 @@
-import java.util.HashSet;
+package core;
+
+import util.*;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -11,12 +13,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashSet;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class Arena extends JPanel implements ActionListener {
-  enum State {
+  public enum State {
     TITLE_SCREEN, MENU_SCREEN, IN_GAME, SETTINGS
   };
 
@@ -28,8 +31,8 @@ public class Arena extends JPanel implements ActionListener {
   private Ball ball;
   private Paddle paddle;
   private Engine engine;
-  private Timer timer;
   private Score score;
+  private Timer timer;
   private HashSet<String> keys;
 
   public Arena(HashSet<String> keys) {

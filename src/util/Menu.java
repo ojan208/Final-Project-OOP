@@ -1,3 +1,7 @@
+package util;
+
+import core.*;
+
 import java.awt.Graphics;
 
 public class Menu extends Instances {

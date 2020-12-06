@@ -5,7 +5,7 @@
 **A. Deskripsi masalah**
 - Implementasi dari game terkenal yaitu Pong dimana ada dua paddle yang masing-masing dimiliki oleh pemain A dan B. Tugas pemain adalah menggerakkan paddle dan menjaga bola agar tidak melewati paddle miliknya. Pemain kemudian akan mendapatkan skor dengan cara membiarkan pemain lawan gagal mengembalikan bola ke arena.
 - Nama main file adalah ‘Pong’ (Contoh command: java Pong).
-- Ukuran window adalah 1200 x 800
+- Ukuran window minimum adalah 1200 x 800 dengan default *fullscreen*.
 
 **B. Setelah app berjalan**
 - Tampilkan menu { *Start Game (2P), Settings, Quit* }.
@@ -18,12 +18,14 @@
 - Jika bola melewati paddle pemain dan keluar dari arena, maka pemain lawan dari pemain yang paddle-nya dilewati akan bertambah satu skornya dan keadaan bola dan paddle kembali di-reset.
 - Pada bagian settings, pemain dapat mengkonfigurasi game berkaitan dengan:
   - Kecepatan Bola
-  - Kecepatan Paddle
+  - Ukuran Paddle
+  - Tema Warna
+  - Skor Maksimum
 
 **C. Batasan lainnya**
 - Gunakan prinsip modularitas pada code.
 - Tampilan dibuat semenarik mungkin, misalnya warna, font, layout, dll.
-- Scoreboard akan direset ketika aplikasi ditutup.
+- Skor akan di-*reset* setiap kali kembali ke menu. 
 
 **D. Challenge ideas (optional)**
 - Buat sistem mode permainan, misalnya kecepatan bola dapat berubah ketika mengenai paddle pemain. 

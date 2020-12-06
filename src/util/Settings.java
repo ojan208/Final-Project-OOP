@@ -1,3 +1,7 @@
+package util;
+
+import core.*;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.LinkedHashMap;
@@ -61,6 +65,7 @@ public class Settings extends Instances {
     return this.settingsState;
   }
 
+  // mengambil indeks nilai pilihan settings terakhir
   public int getSettingsOptionsLength() {
     return this.settingsList.length - 1;
   }

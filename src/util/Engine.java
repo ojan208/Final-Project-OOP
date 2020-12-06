@@ -1,3 +1,7 @@
+package util;
+
+import core.*;
+
 public class Engine {
   private boolean isRunning;
 

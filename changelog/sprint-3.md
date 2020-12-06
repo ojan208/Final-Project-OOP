@@ -11,15 +11,15 @@
 ## Sprint Overview
 | Planned (n)   | Completed (n) |
 | ------------- |-------------- |
-| 3             | n             |
+| 3             | 1             |
 
 ## Sprint 3 Backlog
 
 | ID  | Title/Desc | Asignee | 
 | --- | ---------- | ------- | 
-| 3.1 | Merapikan antarmuka game yang kurang sesuai | Karin | 
-| 3.2 | Bug fixing | Dicky | 
-| 3.3 | Mengimplementasikan challenge yang dapat diselesaikan | Windu |
+| 3.1 | Merapikan antarmuka game yang kurang sesuai | Karin | Ongoing | 
+| 3.2 | Bug fixing | Dicky | Done |  
+| 3.3 | Mengimplementasikan challenge yang dapat diselesaikan | Windu | Ongoing | 
 
 ## Retrospective 
 

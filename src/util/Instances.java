@@ -1,3 +1,5 @@
+package util;
+
 public abstract class Instances {
   protected int maxHeight, maxWidth;
 

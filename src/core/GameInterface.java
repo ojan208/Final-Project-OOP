@@ -1,7 +1,10 @@
-import java.util.HashSet;
+package core;
+
+import util.*;
 
 import java.awt.Container;
 import java.awt.Dimension;
+import java.util.HashSet;
 
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
@@ -51,10 +54,6 @@ public class GameInterface implements Runnable {
 
     // listener untuk keyboard
     pongFrame.addKeyListener(this.keyboardListener);
-  }
-
-  public JFrame getFrame() {
-    return pongFrame;
   }
 
 }

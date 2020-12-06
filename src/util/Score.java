@@ -1,3 +1,5 @@
+package util;
+
 import java.awt.Graphics;
 
 public class Score extends Instances {
@@ -29,6 +31,7 @@ public class Score extends Instances {
     return this.maxScore;
   }
 
+  // ambil pemain yang menang
   public int hasWon() {
     if (p1_score == maxScore) {
       return 1;

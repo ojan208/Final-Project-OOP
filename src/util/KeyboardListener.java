@@ -1,18 +1,14 @@
-import java.util.HashSet;
+package util;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.HashSet;
 
-public class KeyboardListener extends Thread implements KeyListener {
+public class KeyboardListener implements KeyListener {
   private HashSet<String> keys;
 
   public KeyboardListener(HashSet<String> keys) {
     this.keys = keys;
-  }
-
-  @Override
-  public void run() {
-    System.out.println("This runs");
   }
 
   // ketika tombol ditekan, maka akan menyimpan state ke keys
