@@ -6,7 +6,7 @@ public class Score extends Instances {
 
   // konstruktor, keadaan awal skor
   public Score() {
-    p1_score = p2_score = 0;
+    reset();
   }
 
   // increment skor player 1
@@ -26,7 +26,7 @@ public class Score extends Instances {
 
   // method draw untuk score
   public void draw(Graphics g) {
-    g.setFont(new Font("Press Start 2P", Font.PLAIN, 30));
+    g.setFont(g.getFont().deriveFont(24f));
     g.drawString(Integer.toString(p1_score), maxWidth / 4, maxHeight / 5);
     g.drawString(":", maxWidth / 2, maxHeight / 5);
     g.drawString(Integer.toString(p2_score), maxWidth * 3 / 4, maxHeight / 5);

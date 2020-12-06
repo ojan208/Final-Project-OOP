@@ -10,8 +10,7 @@ public class Settings extends Instances {
 
   // konstruktor untuk settings, akan mengambil nilai yang dibutuhkan dari
   // variabel yang di pass arena
-  public Settings(int containerHeight, int containerWidth, Arena arena) {
-    super(containerHeight, containerWidth);
+  public Settings(Arena arena) {
     this.settingsState = 0;
     this.s_ballVelocity = (int) arena.getBall().getVelocity();
     this.s_paddleSize = arena.getPaddles().getPaddleSize();
@@ -45,8 +44,7 @@ public class Settings extends Instances {
 
   // method draw untuk settings
   public void draw(Graphics g) {
-    g.setFont(new Font("Press Start 2P", Font.PLAIN, 14));
-    g.setColor(Color.WHITE);
+
     g.drawString(title, maxWidth * 3 / 7, maxHeight * 20 / 50);
     g.drawString(settingsList[0], maxWidth * 3 / 7, maxHeight * 25 / 50);
     g.drawString(settingsList[1], maxWidth * 3 / 7, maxHeight * 30 / 50);

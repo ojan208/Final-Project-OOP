@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 import java.awt.Container;
 import java.awt.Dimension;
 
@@ -8,15 +10,17 @@ public class GameInterface implements Runnable {
   private JFrame pongFrame;
   private Arena arena;
   private KeyboardListener keyboardListener;
+  private HashSet<String> keys;
 
   public GameInterface() {
     // membuat instance keyboardListener yang akan mengambil input key untuk JFrame
     // pongFrame sebagai component yang terfokus
-    keyboardListener = new KeyboardListener();
+    this.keys = new HashSet<String>();
+    this.keyboardListener = new KeyboardListener(keys);
 
     // meneruskan keyboardListener ke dalam JPanel arena sehingga dapat dilakukan
     // mapping action untuk masing-masing key
-    arena = new Arena(keyboardListener);
+    this.arena = new Arena(keys);
   }
 
   @Override

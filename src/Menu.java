@@ -8,8 +8,7 @@ public class Menu extends Instances {
   private int menuState;
 
   // konstruktor untuk menu
-  public Menu(int containerHeight, int containerWidth) {
-    super(containerHeight, containerWidth);
+  public Menu() {
     this.menuState = 0;
   }
 
@@ -38,8 +37,7 @@ public class Menu extends Instances {
 
   // method draw untuk menu
   public void draw(Graphics g) {
-    g.setFont(new Font("Press Start 2P", Font.PLAIN, 14));
-    g.setColor(Color.WHITE);
+
     g.drawString(title, maxWidth * 3 / 7, maxHeight * 20 / 50);
     g.drawString(menuList[0], maxWidth * 3 / 7, maxHeight * 25 / 50);
     g.drawString(menuList[1], maxWidth * 3 / 7, maxHeight * 30 / 50);
@@ -56,7 +54,7 @@ public class Menu extends Instances {
     } else if (menuState == 3) {
       g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * 25 / 50);
       menuState = 0;
-    } else if (menuState == -1){
+    } else if (menuState == -1) {
       g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * 35 / 50);
       menuState = 2;
     }

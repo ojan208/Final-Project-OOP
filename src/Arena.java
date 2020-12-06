@@ -1,10 +1,16 @@
+import java.util.HashSet;
+
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.Graphics;
+import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -24,17 +30,36 @@ public class Arena extends JPanel implements ActionListener {
   private Engine engine;
   private Timer timer;
   private Score score;
-  private KeyboardListener keyboardListener;
+  private HashSet<String> keys;
 
-  public Arena(KeyboardListener keyboardListener) {
+  public Arena(HashSet<String> keys) {
     super();
     super.setBackground(Color.BLACK);
+
+    // mengambil font dari folder font
+    try {
+      Font bodyFont = Font.createFont(Font.TRUETYPE_FONT, new File("../font/Body.ttf")).deriveFont(14f);
+      GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+
+      ge.registerFont(bodyFont);
+
+      this.setFont(bodyFont);
+    } catch (IOException e) {
+      e.printStackTrace();
+      this.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+    } catch (FontFormatException e) {
+      e.printStackTrace();
+      this.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+    }
+
     this.engine = new Engine();
     this.ball = new Ball();
     this.paddle = new Paddle();
     this.score = new Score();
+    this.menu = new Menu();
+    this.settings = new Settings(this);
 
-    this.keyboardListener = keyboardListener;
+    this.keys = keys;
 
     // update pada game, per 150 milidetik = 1x update (hanya untuk menu)
     this.timer = new Timer(150, this);
@@ -83,7 +108,7 @@ public class Arena extends JPanel implements ActionListener {
   @Override
   public void actionPerformed(ActionEvent e) {
     // implementasi keyboardListener berdasarkan masing-masing state
-    if (keyboardListener.getKeys().contains("UP")) {
+    if (keys.contains("UP")) {
       switch (state) {
         case MENU_SCREEN:
           menu.moveCursor(-1);
@@ -95,7 +120,9 @@ public class Arena extends JPanel implements ActionListener {
           settings.moveCursor(-1);
           break;
       }
-    } else if (keyboardListener.getKeys().contains("DOWN")) {
+    }
+
+    if (keys.contains("DOWN")) {
       switch (state) {
         case MENU_SCREEN:
           menu.moveCursor(+1);
@@ -107,7 +134,9 @@ public class Arena extends JPanel implements ActionListener {
           settings.moveCursor(+1);
           break;
       }
-    } else if (keyboardListener.getKeys().contains("W")) {
+    }
+
+    if (keys.contains("W")) {
       switch (state) {
         case MENU_SCREEN:
           menu.moveCursor(-1);
@@ -119,7 +148,9 @@ public class Arena extends JPanel implements ActionListener {
           settings.moveCursor(-1);
           break;
       }
-    } else if (keyboardListener.getKeys().contains("S")) {
+    }
+
+    if (keys.contains("S")) {
       switch (state) {
         case MENU_SCREEN:
           menu.moveCursor(+1);
@@ -131,29 +162,35 @@ public class Arena extends JPanel implements ActionListener {
           settings.moveCursor(+1);
           break;
       }
-    } else if (keyboardListener.getKeys().contains("LEFT")) {
+    }
+
+    if (keys.contains("LEFT")) {
       switch (state) {
         case SETTINGS:
           settings.alterAmount(-1);
           break;
       }
-    } else if (keyboardListener.getKeys().contains("RIGHT")) {
+    }
+
+    if (keys.contains("RIGHT")) {
       switch (state) {
         case SETTINGS:
           settings.alterAmount(+1);
           break;
       }
-    } else if (keyboardListener.getKeys().contains("SPACE")) {
+    }
+
+    if (keys.contains("SPACE")) {
       switch (state) {
         case TITLE_SCREEN:
           state = State.MENU_SCREEN;
-          menu = (menu == null) ? new Menu(getHeight(), getWidth()) : menu;
+          menu.setBoundary(getHeight(), getWidth());
           break;
         case MENU_SCREEN:
           // mengubah state tampilan sesuai yang dipilih pada menu
           state = menu.ignite();
           if (state == State.SETTINGS) {
-            settings = (settings == null) ? new Settings(getHeight(), getWidth(), this) : settings;
+            settings.setBoundary(getHeight(), getWidth());
           }
           break;
         case IN_GAME:
@@ -166,11 +203,13 @@ public class Arena extends JPanel implements ActionListener {
           if (settings.getSettingsState() == 2) {
             settings.wrap(this);
             state = State.MENU_SCREEN;
-            menu = (menu == null) ? new Menu(getHeight(), getWidth()) : menu;
+            menu.setBoundary(getHeight(), getWidth());
           }
           break;
       }
-    } else if (keyboardListener.getKeys().contains("ESCAPE")) {
+    }
+
+    if (keys.contains("ESCAPE")) {
       switch (state) {
         case IN_GAME:
           // menghentikan engine, me-reset score, dan mengembalikan delay timer untuk menu
@@ -198,7 +237,10 @@ public class Arena extends JPanel implements ActionListener {
 
   @Override
   protected void paintComponent(Graphics g) {
+    g.setColor(Color.WHITE);
+
     super.paintComponent(g);
+
     if (state == State.TITLE_SCREEN) {
       String message = "Press start to continue";
 
@@ -210,8 +252,6 @@ public class Arena extends JPanel implements ActionListener {
 
       g.drawImage(i, getWidth() / 2 - image_w / 2, getHeight() / 2 - image_h / 2, this);
 
-      g.setFont(new Font("Press Start 2P", Font.PLAIN, 14));
-      g.setColor(Color.WHITE);
       int string_h = g.getFontMetrics().getHeight();
       int string_w = g.getFontMetrics().stringWidth(message);
       g.drawString(message, getWidth() / 2 - string_w / 2, getHeight() / 2 - string_h / 2 + i.getHeight(this) + 20);
