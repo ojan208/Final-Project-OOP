@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class Arena extends JPanel implements ActionListener{
+public class Arena extends JPanel implements ActionListener {
   enum State {
     TITLE_SCREEN, MENU_SCREEN, IN_GAME, SETTINGS
   };
@@ -95,7 +95,6 @@ public class Arena extends JPanel implements ActionListener{
           settings.moveCursor(-1);
           break;
       }
-      repaint();
     } else if (keyboardListener.getKeys().contains("DOWN")) {
       switch (state) {
         case MENU_SCREEN:
@@ -108,7 +107,6 @@ public class Arena extends JPanel implements ActionListener{
           settings.moveCursor(+1);
           break;
       }
-      repaint();
     } else if (keyboardListener.getKeys().contains("W")) {
       switch (state) {
         case MENU_SCREEN:
@@ -121,7 +119,6 @@ public class Arena extends JPanel implements ActionListener{
           settings.moveCursor(-1);
           break;
       }
-      repaint();
     } else if (keyboardListener.getKeys().contains("S")) {
       switch (state) {
         case MENU_SCREEN:
@@ -134,21 +131,18 @@ public class Arena extends JPanel implements ActionListener{
           settings.moveCursor(+1);
           break;
       }
-      repaint();
     } else if (keyboardListener.getKeys().contains("LEFT")) {
       switch (state) {
         case SETTINGS:
           settings.alterAmount(-1);
           break;
       }
-      repaint();
     } else if (keyboardListener.getKeys().contains("RIGHT")) {
       switch (state) {
         case SETTINGS:
           settings.alterAmount(+1);
           break;
       }
-      repaint();
     } else if (keyboardListener.getKeys().contains("SPACE")) {
       switch (state) {
         case TITLE_SCREEN:
@@ -163,7 +157,7 @@ public class Arena extends JPanel implements ActionListener{
           }
           break;
         case IN_GAME:
-          // mengubah timer menjadi nilai in-game, per 10 milidetik = 1x update
+          // mengubah timer menjadi nilai in-game, per 5 milidetik = 1x update
           timer.setDelay(10);
           engine.start();
           break;
@@ -176,7 +170,6 @@ public class Arena extends JPanel implements ActionListener{
           }
           break;
       }
-      repaint();
     } else if (keyboardListener.getKeys().contains("ESCAPE")) {
       switch (state) {
         case IN_GAME:
@@ -187,8 +180,9 @@ public class Arena extends JPanel implements ActionListener{
           state = State.MENU_SCREEN;
           break;
       }
-      repaint();
     }
+
+    repaint();
 
     // jika state dalam permainan dan engine running, maka akan mengupdate
     // pergerakan setiap instances. Jika engine tidak running maka akan reset posisi

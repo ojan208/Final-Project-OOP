@@ -31,7 +31,7 @@ public class Settings extends Instances {
   // menambah/ mengurangi nilai variabel state sesuai amount yang dimasukkan
   public void alterAmount(int amount) {
     if (settingsState == 0) {
-      s_ballVelocity += (((s_ballVelocity == 10) && (amount > 0)) || ((s_ballVelocity == 3) && (amount < 0))) ? 0
+      s_ballVelocity += (((s_ballVelocity == 7) && (amount > 0)) || ((s_ballVelocity == 1) && (amount < 0))) ? 0
           : amount;
     } else if (settingsState == 1) {
       s_paddleSize += (((s_paddleSize == 300) && (amount > 0)) || ((s_paddleSize == 20) && (amount < 0))) ? 0 : amount;

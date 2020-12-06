@@ -72,8 +72,8 @@ public class Paddle extends Instances {
   // method draw untuk paddle
   public void draw(Graphics g) {
     g.setColor(Color.WHITE);
-    g.fillRect(5, aY - paddleSize / 2, 10, paddleSize);
+    g.fillRect(25, aY - paddleSize / 2, 15, paddleSize);
     g.setColor(Color.WHITE);
-    g.fillRect(maxWidth - 20, bY - paddleSize / 2, 10, paddleSize);
+    g.fillRect(maxWidth - 40, bY - paddleSize / 2, 15, paddleSize);
   }
 }

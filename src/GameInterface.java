@@ -1,4 +1,5 @@
 import java.awt.Container;
+import java.awt.Dimension;
 
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
@@ -21,6 +22,8 @@ public class GameInterface implements Runnable {
   @Override
   public void run() {
     pongFrame = new JFrame("Pong");
+
+    pongFrame.setMinimumSize(new Dimension(1200, 800));
 
     // fullscreen
     pongFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);

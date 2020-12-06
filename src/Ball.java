@@ -16,7 +16,7 @@ public class Ball extends Instances {
 
   // konstruktor
   public Ball() {
-    this.velocity = this.dX = this.dY = 5.0;
+    this.velocity = this.dX = this.dY = 3.0;
     this.ballR = 8;
   }
 
@@ -79,19 +79,31 @@ public class Ball extends Instances {
   // logika tumbukan bola, akan mengembalikan boolean true jika terjadi tumbukan
   // dan false jika tidak terjadi tumbukan
   public boolean paddleCollision(Paddle paddle, Score score) {
-    if ((ballX - ballR < 15) && (ballY < paddle.getaY() + paddle.getPaddleSize() / 2)
-        && (ballY > paddle.getaY() - paddle.getPaddleSize() / 2)) {
-      dX = -dX;
-    } else if ((ballX + ballR > maxWidth - 15) && (ballY < paddle.getbY() + paddle.getPaddleSize() / 2)
-        && (ballY > paddle.getbY() - paddle.getPaddleSize() / 2)) {
-      dX = -dX;
-    } else if (ballX - ballR < 0) {
+    if (ballX - ballR < 0) {
       score.addP2Score();
       return false;
     } else if (ballX + ballR > maxWidth) {
       score.addP1Score();
       return false;
     }
+
+    if (((ballX - ballR <= 35 && ballX + ballR >= 20)
+        && (ballY - ballR == paddle.getaY() + paddle.getPaddleSize() / 2 + 5
+            || ballY + ballR == paddle.getaY() - paddle.getPaddleSize() / 2 - 5))
+        || ((ballX + ballR >= maxWidth - 35 && ballX - ballR <= maxWidth - 20)
+            && (ballY - ballR == paddle.getbY() + paddle.getPaddleSize() / 2 + 5
+                || ballY + ballR == paddle.getbY() - paddle.getPaddleSize() / 2 - 5))) {
+      dY = -dY;
+    }
+
+    if (((ballX - ballR <= 35) && (ballX - ballR >= 20) && (ballY - ballR < paddle.getaY() + paddle.getPaddleSize() / 2)
+        && (ballY + ballR > paddle.getaY() - paddle.getPaddleSize() / 2))
+        || ((ballX + ballR >= maxWidth - 35) && (ballX - ballR <= maxWidth - 20)
+            && (ballY - ballR < paddle.getbY() + paddle.getPaddleSize() / 2)
+            && (ballY + ballR > paddle.getbY() - paddle.getPaddleSize() / 2))) {
+      dX = -dX;
+    }
+
     return true;
   }
 
