@@ -84,8 +84,6 @@ public class Arena extends JPanel implements ActionListener {
       // set koordinat paddle di tengah
       paddle.setaY(getHeight() / 2);
       paddle.setbY(getHeight() / 2);
-
-      repaint();
     }
   }
 
@@ -190,17 +188,21 @@ public class Arena extends JPanel implements ActionListener {
           // mengubah state tampilan sesuai yang dipilih pada menu
           state = menu.ignite();
           if (state == State.SETTINGS) {
+            settings.setSettingsState(0);
             settings.setBoundary(getHeight(), getWidth());
           }
           break;
         case IN_GAME:
+          if (score.hasWon() != 0) {
+            score.reset();
+          }
           // mengubah timer menjadi nilai in-game, per 5 milidetik = 1x update
           timer.setDelay(5);
           engine.start();
           break;
         case SETTINGS:
           // jika `back` pada settings maka menyimpan hasil perubahan
-          if (settings.getSettingsState() == 2) {
+          if (settings.getSettingsState() == settings.getSettingsOptionsLength()) {
             settings.wrap(this);
             state = State.MENU_SCREEN;
             menu.setBoundary(getHeight(), getWidth());
@@ -221,8 +223,6 @@ public class Arena extends JPanel implements ActionListener {
       }
     }
 
-    repaint();
-
     // jika state dalam permainan dan engine running, maka akan mengupdate
     // pergerakan setiap instances. Jika engine tidak running maka akan reset posisi
     // setiap instances
@@ -233,11 +233,17 @@ public class Arena extends JPanel implements ActionListener {
         initInstances();
       }
     }
+
+    repaint();
   }
 
   @Override
   protected void paintComponent(Graphics g) {
-    g.setColor(Color.WHITE);
+    if (this.getBackground() == Color.BLACK) {
+      g.setColor(Color.WHITE);
+    } else {
+      g.setColor(Color.BLACK);
+    }
 
     super.paintComponent(g);
 
@@ -258,7 +264,19 @@ public class Arena extends JPanel implements ActionListener {
     } else if (state == State.MENU_SCREEN) {
       menu.draw(g);
     } else if (state == State.IN_GAME) {
-      ball.draw(g);
+      if (score.hasWon() != 0) {
+        String submessage = "Press space to play again...";
+        int string_h = g.getFontMetrics().getHeight();
+        int string_w2 = g.getFontMetrics().stringWidth(submessage);
+        g.drawString(submessage, getWidth() / 2 - string_w2 / 2, getHeight() / 2 - string_h / 2 + 50);
+
+        g.setFont(this.getFont().deriveFont(24f));
+        String message = "Player " + score.hasWon() + " wins the game!";
+        int string_w = g.getFontMetrics().stringWidth(message);
+        g.drawString(message, getWidth() / 2 - string_w / 2, getHeight() / 2 - string_h / 2);
+      } else {
+        ball.draw(g);
+      }
       paddle.draw(g);
       score.draw(g);
     } else if (state == State.SETTINGS) {

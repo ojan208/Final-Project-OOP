@@ -1,5 +1,3 @@
-import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
 
 public class Menu extends Instances {
@@ -38,7 +36,6 @@ public class Menu extends Instances {
   // method draw untuk menu
   public void draw(Graphics g) {
 
-    g.drawString(title, maxWidth * 3 / 7, maxHeight * 20 / 50);
     g.drawString(menuList[0], maxWidth * 3 / 7, maxHeight * 25 / 50);
     g.drawString(menuList[1], maxWidth * 3 / 7, maxHeight * 30 / 50);
     g.drawString(menuList[2], maxWidth * 3 / 7, maxHeight * 35 / 50);
@@ -58,5 +55,9 @@ public class Menu extends Instances {
       g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * 35 / 50);
       menuState = 2;
     }
+
+    g.setFont(g.getFont().deriveFont(28f));
+    g.drawString(title, maxWidth * 3 / 7, maxHeight * 15 / 50);
+
   }
 }

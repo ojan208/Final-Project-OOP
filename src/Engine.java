@@ -40,9 +40,6 @@ public class Engine {
     if (!a.getBall().paddleCollision(a.getPaddles(), a.getScore())) {
       stop();
     }
-
-    // repaint arena
-    a.repaint();
   }
 
   // mengembalikan keadaan engine

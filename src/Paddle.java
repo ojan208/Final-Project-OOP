@@ -1,4 +1,3 @@
-import java.awt.Color;
 import java.awt.Graphics;
 
 public class Paddle extends Instances {
@@ -71,9 +70,7 @@ public class Paddle extends Instances {
 
   // method draw untuk paddle
   public void draw(Graphics g) {
-    g.setColor(Color.WHITE);
     g.fillRect(25, aY - paddleSize / 2, 15, paddleSize);
-    g.setColor(Color.WHITE);
     g.fillRect(maxWidth - 40, bY - paddleSize / 2, 15, paddleSize);
   }
 }

@@ -1,4 +1,3 @@
-import java.awt.Color;
 import java.awt.Graphics;
 
 public class Ball extends Instances {
@@ -134,7 +133,6 @@ public class Ball extends Instances {
     int x = (int) (ballX - ballR);
     int y = (int) (ballY - ballR);
     int size = 2 * ballR;
-    g.setColor(Color.WHITE);
     g.fillOval(x, y, size, size);
   }
 }
