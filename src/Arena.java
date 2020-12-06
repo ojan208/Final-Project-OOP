@@ -158,7 +158,7 @@ public class Arena extends JPanel implements ActionListener {
           break;
         case IN_GAME:
           // mengubah timer menjadi nilai in-game, per 5 milidetik = 1x update
-          timer.setDelay(10);
+          timer.setDelay(5);
           engine.start();
           break;
         case SETTINGS:

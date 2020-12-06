@@ -2,6 +2,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class Ball extends Instances {
+  private int bouncingToken;
+
   // koordinat x dan y bola
   private double ballX, ballY;
 
@@ -74,6 +76,11 @@ public class Ball extends Instances {
       ballY = ballR + out;
       dY = -dY;
     }
+
+    if ((ballX >= maxWidth / 4 && ballX <= maxWidth / 4 + 5)
+        || (ballX >= maxWidth * 3 / 4 || ballX <= maxWidth * 3 / 4 + 5)) {
+      bouncingToken = 1;
+    }
   }
 
   // logika tumbukan bola, akan mengembalikan boolean true jika terjadi tumbukan
@@ -87,21 +94,36 @@ public class Ball extends Instances {
       return false;
     }
 
-    if (((ballX - ballR <= 35 && ballX + ballR >= 20)
-        && (ballY - ballR == paddle.getaY() + paddle.getPaddleSize() / 2 + 5
-            || ballY + ballR == paddle.getaY() - paddle.getPaddleSize() / 2 - 5))
-        || ((ballX + ballR >= maxWidth - 35 && ballX - ballR <= maxWidth - 20)
-            && (ballY - ballR == paddle.getbY() + paddle.getPaddleSize() / 2 + 5
-                || ballY + ballR == paddle.getbY() - paddle.getPaddleSize() / 2 - 5))) {
+    if ((ballX - ballR <= 35 && ballX - ballR >= 20)
+        && (ballY - ballR <= paddle.getaY() + paddle.getPaddleSize() / 2 + 5
+            && ballY - ballR >= paddle.getaY() + paddle.getPaddleSize() / 2)) {
       dY = -dY;
     }
 
-    if (((ballX - ballR <= 35) && (ballX - ballR >= 20) && (ballY - ballR < paddle.getaY() + paddle.getPaddleSize() / 2)
+    if ((ballX + ballR >= maxWidth - 35 && ballX + ballR <= maxWidth - 20)
+        && (ballY - ballR <= paddle.getbY() + paddle.getPaddleSize() / 2 + 5
+            && ballY - ballR >= paddle.getbY() + paddle.getPaddleSize() / 2)) {
+      dY = -dY;
+    }
+
+    if ((ballX - ballR <= 35 && ballX - ballR >= 20) && (ballY + ballR <= paddle.getaY() - paddle.getPaddleSize() / 2
+        && ballY + ballR >= paddle.getaY() - paddle.getPaddleSize() / 2 - 5)) {
+      dY = -dY;
+    }
+
+    if ((ballX + ballR >= maxWidth - 35 && ballX + ballR <= maxWidth - 20)
+        && (ballY + ballR <= paddle.getbY() - paddle.getPaddleSize() / 2
+            && ballY + ballR >= paddle.getbY() - paddle.getPaddleSize() / 2 - 5)) {
+      dY = -dY;
+    }
+
+    if (((ballX - ballR <= 35) && (ballX - ballR >= 30) && (ballY - ballR < paddle.getaY() + paddle.getPaddleSize() / 2)
         && (ballY + ballR > paddle.getaY() - paddle.getPaddleSize() / 2))
-        || ((ballX + ballR >= maxWidth - 35) && (ballX - ballR <= maxWidth - 20)
+        || ((ballX + ballR >= maxWidth - 35) && (ballX + ballR <= maxWidth - 30)
             && (ballY - ballR < paddle.getbY() + paddle.getPaddleSize() / 2)
-            && (ballY + ballR > paddle.getbY() - paddle.getPaddleSize() / 2))) {
+            && (ballY + ballR > paddle.getbY() - paddle.getPaddleSize() / 2)) && bouncingToken == 1) {
       dX = -dX;
+      bouncingToken = 0;
     }
 
     return true;
