@@ -229,13 +229,13 @@ File utama `Pong.java`
 
 10. **Score** -
 `Score.java`
-   - Object score yang mengekstensi class `Instances`.
-   - Arguments (0 arg)
-   - 3 Class Variable
+    - Object score yang mengekstensi class `Instances`.
+    - Arguments (0 arg)
+    - 3 Class Variable
       - **@p1_score** - Nilai skor pemain 1.
       - **@p2_score** - Nilai skor pemain 2.
       - **@maxScore** - Nilai maksimum skor.
-   - 7 Method
+    - 7 Method
       - **addP1Score()** - Increment skor pemain 1.
       - **addP2Score()** - Increment skor pemain 2.
       - **changeMaxScore(maxScore)** - Ubah skor maksimal.
@@ -246,10 +246,10 @@ File utama `Pong.java`
       
 11. **Settings** -
 `Settings.java`
-   - Object settings yang mengekstensi class `Instances`. Berfungsi sebagai controller dan views halaman settings.
-   - Arguments (1 arg)
+    - Object settings yang mengekstensi class `Instances`. Berfungsi sebagai controller dan views halaman settings.
+    - Arguments (1 arg)
       - **1 arg (arena)** - Berisi inisialisasi komponen variabel temporary yang diambil dari arena.
-   - 8 Class Variable
+    - 8 Class Variable
       - **@title** - Merupakan judul SETTINGS.
       - **@settingsList** - Array string pilihan settings.
       - **@settingsState** - Status settings aktif yang akan ditunjuk kursor.
@@ -258,7 +258,7 @@ File utama `Pong.java`
       - **@s_currentTheme** - Temporary variabel tema warna.
       - **@s_maxScore** - Temporary variabel ukuran skor maksimal.
       - **@s_colorTheme** - LinkedHashMap berisi warna yang dapat dipilih sebagai tema.
-   - 7 Method
+    - 7 Method
       - **wrap()** - Menerapkan segala perubahan yang telah dibuat.
       - **moveCursor(amount)** - Perubahan pergerakan kursor yang menunjuk pilihan settings.
       - **alterAmount(amount)** - Menambah/ mengurangi nilai variabel temporary sesuai amount yang dimasukkan.
