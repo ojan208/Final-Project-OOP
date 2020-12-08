@@ -40,10 +40,16 @@ public class Menu extends Instances {
   // method draw untuk menu
   public void draw(Graphics g) {
 
-    g.drawString(menuList[0], maxWidth * 3 / 7, maxHeight * 25 / 50);
-    g.drawString(menuList[1], maxWidth * 3 / 7, maxHeight * 30 / 50);
-    g.drawString(menuList[2], maxWidth * 3 / 7, maxHeight * 35 / 50);
-    g.drawString(menuList[3], maxWidth * 3 / 7, maxHeight * 40 / 50);
+   for (int i = 0; i < menuList.length; i++) {
+      g.drawString(menuList[i], maxWidth * 3 / 7, maxHeight * (25 + 5 * i) / 50);
+    }
+
+    // menyesuaikan dengan state saat ini, akan muncul kursor di sebelah kiri dan
+    // indikator nilainya di sebelah kanan
+
+    g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * (25 + 5 * settingsState) / 50);
+
+  }
 
     // menyesuaikan dengan state saat ini, akan muncul kursor di sebelah kiri dan
     // indikator nilainya di sebelah kanan
