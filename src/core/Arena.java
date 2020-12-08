@@ -231,7 +231,7 @@ public class Arena extends JPanel implements ActionListener {
     // setiap instances
     if (state == State.IN_GAME) {
       if (engine.getRunningState()) {
-        engine.updateGame(this);
+        engine.updateGame(this, menu);
       } else {
         initInstances();
       }
