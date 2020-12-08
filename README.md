@@ -252,7 +252,7 @@ File utama `Pong.java`
       - **draw(g)** - Drawable untuk settings.
 
 
-![UML](/images/UML.png "UML")
+![UML](/images/UML_project.png "UML")
 
 ## Notable Assumption and Design App Details
 
