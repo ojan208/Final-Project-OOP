@@ -47,7 +47,7 @@ public class Menu extends Instances {
     // menyesuaikan dengan state saat ini, akan muncul kursor di sebelah kiri dan
     // indikator nilainya di sebelah kanan
 
-    g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * (25 + 5 * settingsState) / 50);
+    g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * (25 + 5 * menuState) / 50);
 
   }
 
