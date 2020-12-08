@@ -96,28 +96,36 @@ public class Ball extends Instances {
       return false;
     }
 
+    // Empat if dibawah ini merupakan bug fix
+
+    // fix bola nyangkut di bawah kiri
     if ((ballX - ballR <= 35 && ballX - ballR >= 20)
         && (ballY - ballR <= paddle.getaY() + paddle.getPaddleSize() / 2 + 5
             && ballY - ballR >= paddle.getaY() + paddle.getPaddleSize() / 2)) {
       dY = -dY;
     }
 
+    // fix bola nyangkut di bawah kanan
     if ((ballX + ballR >= maxWidth - 35 && ballX + ballR <= maxWidth - 20)
         && (ballY - ballR <= paddle.getbY() + paddle.getPaddleSize() / 2 + 5
             && ballY - ballR >= paddle.getbY() + paddle.getPaddleSize() / 2)) {
       dY = -dY;
     }
 
+    // fix bola nyangkut di atas kiri
     if ((ballX - ballR <= 35 && ballX - ballR >= 20) && (ballY + ballR <= paddle.getaY() - paddle.getPaddleSize() / 2
         && ballY + ballR >= paddle.getaY() - paddle.getPaddleSize() / 2 - 5)) {
       dY = -dY;
     }
 
+    // fix bola nyangkut di atas kanan
     if ((ballX + ballR >= maxWidth - 35 && ballX + ballR <= maxWidth - 20)
         && (ballY + ballR <= paddle.getbY() - paddle.getPaddleSize() / 2
             && ballY + ballR >= paddle.getbY() - paddle.getPaddleSize() / 2 - 5)) {
       dY = -dY;
     }
+
+    // Empat if selesai
 
     if (((ballX - ballR <= 35) && (ballX - ballR >= 30) && (ballY - ballR < paddle.getaY() + paddle.getPaddleSize() / 2)
         && (ballY + ballR > paddle.getaY() - paddle.getPaddleSize() / 2))
