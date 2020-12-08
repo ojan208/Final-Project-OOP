@@ -40,7 +40,7 @@ public class Menu extends Instances {
   // method draw untuk menu
   public void draw(Graphics g) {
 
-   for (int i = 0; i < menuList.length; i++) {
+    for (int i = 0; i < menuList.length; i++) {
       g.drawString(menuList[i], maxWidth * 3 / 7, maxHeight * (25 + 5 * i) / 50);
     }
 
@@ -48,8 +48,6 @@ public class Menu extends Instances {
     // indikator nilainya di sebelah kanan
 
     g.drawString("> ", maxWidth * 3 / 7 - 30, maxHeight * (25 + 5 * menuState) / 50);
-
-  }
 
     // menyesuaikan dengan state saat ini, akan muncul kursor di sebelah kiri dan
     // indikator nilainya di sebelah kanan
