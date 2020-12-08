@@ -28,6 +28,6 @@ Dalam rapat sprint kemarin, kelompok juga merencanakan untuk mengatur tugas untu
 ## Next Sprint Backlog (Sprint 3)
 | ID  | Title/Desc | Asignee | 
 | --- | ---------- | ------- | 
-| 3.1 | Merapikan antarmuka game yang kurang sesuai | Karin | 
+| 3.1 | Refactor drawable main menu | Karin | 
 | 3.2 | Bug fixing | Dicky | 
-| 3.3 | Mengimplementasikan challenge yang dapat diselesaikan | Windu |
+| 3.3 | Menambah sistem *single player* | Windu |

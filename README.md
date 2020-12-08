@@ -39,25 +39,9 @@ This repository is a final project (Java GUI) from Object-Oriented Programming C
    - Merapikan antarmuka UI
    
 - **[Sprint 3](changelog/sprint-3.md) - (02/12/2020 - 08/12/2020)** 
-   - Merapikan antarmuka game yang kurang sesuai
-   - Error handling
-   - Mengimplementasikan challenge yang dapat diselesaikan
-
-## Running The App
-
-- Tampilkan menu { Start Game (2P), Settings, Quit }
-- Untuk start game, tampilkan window game dan scoreboard di atas layar
-- Paddle pemain 1 akan muncul di sebelah kiri window, dan paddle pemain 2 akan muncul di sebelah kanan window
-- Bola akan muncul di tengah koordinat x dan y dari ukuran layar
-- Bola akan segera bergerak secara acak dengan kecepatan yang sudah ditentukan
-- Jika bola mengenai dasar atau atap layar, maka bola akan memantul kembali
-- Jika bola mengenai paddle pemain, maka bola akan memantul menjauhi paddle
-- Jika bola melewati paddle pemain, maka pemain lawan dari pemain yang paddle-nya dilewati skornya akan bertambah 1 dan keadaan bola dan paddle akan di-reset
-- Pada bagian settings, pemain dapat mengonfigurasi game berkaitan mengenai:
-   - Kecepatan bola;
-   - Kecepatan paddle;
-
-## Classes Used
+   - Menambah UML
+   - Bug fixing
+   - Menambah sistem *single player*
 
 ## Running The App
 
@@ -265,7 +249,7 @@ File utama `Pong.java`
       - **setSettingsState(state)** - Mengubah keadaan status settings saat ini.
       - **getSettingsState()** - Mengambil status settings saat ini.
       - **getSettingsOptionsLength()** - Mengambil indeks pilihan settings terakhir.
-      - **draw(g)** - Drawable untuk menu.
+      - **draw(g)** - Drawable untuk settings.
 
 UML image here
 
@@ -275,7 +259,7 @@ UML image here
    - Aplikasi didesain untuk bekerja optimal dengan ukuran window fullscreen. Ukuran window minimum 1200x800 masih cukup bekerja dengan baik.
    - Tema warna default adalah hitam (Black) dan pilihan yang dapat dipilih adalah { Black , White }.
    - Skor maksimum default adalah 10 dan skor akan direset jika salah satu pemain mencapai skor tersebut.
-   - Terdapat menu dengan pilihan { Start Game (2 Players), Settings, Quit }.
+   - Terdapat menu dengan pilihan { Start Game (1 Player), Start Game (2 Players), Settings, Quit }.
    - Paddle pemain 1 akan menempel di sebelah kiri arena, dan paddle pemain 2 di sebelah kanan arena.
    - Bola akan muncul di tengah koordinat x dan y dari ukuran layar.
    - Bola akan segera bergerak secara acak dengan kecepatan yang sudah ditentukan.

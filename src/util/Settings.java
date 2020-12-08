@@ -8,7 +8,7 @@ import java.util.LinkedHashMap;
 
 public class Settings extends Instances {
   private String title = "SETTINGS";
-  private String[] settingsList = { "Ball Speed : ", "Paddle Size : ", "Color Pallete : ", "Maximum Goals : ", "Back" };
+  private String[] settingsList = { "Ball Speed : ", "Paddle Size : ", "Color Theme : ", "Maximum Score : ", "Back" };
   private int settingsState;
   private int s_ballVelocity, s_paddleSize, s_currentTheme, s_maxScore;
   private LinkedHashMap<String, Color> s_colorTheme = new LinkedHashMap<String, Color>();

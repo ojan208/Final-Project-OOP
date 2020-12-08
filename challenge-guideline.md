@@ -8,7 +8,7 @@
 - Ukuran window minimum adalah 1200 x 800 dengan default *fullscreen*.
 
 **B. Setelah app berjalan**
-- Tampilkan menu { *Start Game (2P), Settings, Quit* }.
+- Tampilkan menu { *Start Game (1P), Start Game (2P), Settings, Quit* }.
 - Untuk *Start Game*, tampilkan arena permainan dan komponennya (ball, paddle, scoreboard).
 - Paddle pemain 1 akan menempel di sebelah kiri arena, dan paddle pemain 2 di sebelah kanan arena.
 - Bola akan muncul di tengah koordinat x dan y dari ukuran layar.
@@ -28,5 +28,5 @@
 - Skor akan di-*reset* setiap kali kembali ke menu. 
 
 **D. Challenge ideas (optional)**
-- Buat sistem mode permainan, misalnya kecepatan bola dapat berubah ketika mengenai paddle pemain. 
+- Buat mode permainan dinamis, misalnya kecepatan bola dapat berubah ketika mengenai paddle pemain. 
 - Buat mode Player vs CPU.

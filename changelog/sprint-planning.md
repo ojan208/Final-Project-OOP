@@ -27,9 +27,9 @@
 | 2.1 | Membuat tampilan menu dan pilihannya | Karin | 
 | 2.2 | Membuat setting | Dicky | 
 | 2.3 | Merapikan antarmuka UI | Windu | 
-| 3.1 | Merapikan antarmuka game yang kurang sesuai | Karin | 
+| 3.1 | Refactor drawable main menu | Karin | 
 | 3.2 | Bug fixing | Dicky | 
-| 3.3 | Mengimplementasikan challenge yang dapat diselesaikan | Windu | 
+| 3.3 | Menambah sistem *single player* | Windu | 
 
 ## Sprint Backlog Plan (Sprint 1)
 | ID  | Title/Desc | Asignee | 

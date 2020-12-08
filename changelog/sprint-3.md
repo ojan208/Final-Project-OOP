@@ -11,17 +11,17 @@
 ## Sprint Overview
 | Planned (n)   | Completed (n) |
 | ------------- |-------------- |
-| 3             | 1             |
+| 3             | 3             |
 
 ## Sprint 3 Backlog
 
-| ID  | Title/Desc | Asignee | 
-| --- | ---------- | ------- | 
-| 3.1 | Merapikan antarmuka game yang kurang sesuai | Karin | Ongoing | 
-| 3.2 | Bug fixing | Dicky | Done |  
-| 3.3 | Mengimplementasikan challenge yang dapat diselesaikan | Windu | Ongoing | 
+| ID  | Title/Desc | Asignee | Status |
+| --- | ---------- | ------- | ------ |
+| 3.1 | Refactor drawable main menu | Karin | DONE | 
+| 3.2 | Bug fixing | Dicky | DONE |  
+| 3.3 | Menambah sistem *single player* | Windu | DONE | 
 
 ## Retrospective 
 
-Sprint kemarin dianggap terlalu sedikit sehingga diperlukan adanya penyesuaian tugas. Lorem ipsum dolor sit amet
+Sprint berjalan sesuai rencana. Tidak terdapat kendala yang berarti. *Thanks for the opportunity* 😁😁
 
