@@ -251,7 +251,8 @@ File utama `Pong.java`
       - **getSettingsOptionsLength()** - Mengambil indeks pilihan settings terakhir.
       - **draw(g)** - Drawable untuk settings.
 
-UML image here
+
+![UML](/images/UML.png "UML")
 
 ## Notable Assumption and Design App Details
 
