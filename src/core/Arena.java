@@ -143,7 +143,9 @@ public class Arena extends JPanel implements ActionListener {
           menu.moveCursor(-1);
           break;
         case IN_GAME:
-          paddle.moveA("UP");
+          if(menu.getMenuState() == 1){
+            paddle.moveA("UP");
+          }
           break;
         case SETTINGS:
           settings.moveCursor(-1);
@@ -157,7 +159,9 @@ public class Arena extends JPanel implements ActionListener {
           menu.moveCursor(+1);
           break;
         case IN_GAME:
-          paddle.moveA("DOWN");
+          if(menu.getMenuState() == 1){
+            paddle.moveA("DOWN");
+          }
           break;
         case SETTINGS:
           settings.moveCursor(+1);
