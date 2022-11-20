@@ -11,7 +11,7 @@
 ## Sprint Backlog Keseluruhan 
 | ID  | Title/Desc | Asignee | 
 | --- | ---------- | ------- | 
-| 1.1 | Inisialisasi dasar kebutuhan JFrame | Dicky | 
+| 1.1 | Inisialisasi Gradle | Dicky | 
 | 1.2 | Konstruksi main screen | Dicky | 
 | 1.3 | Inisialisasi kecepatan dan ukuran bola dan paddle | Dicky | 
 | 1.4 | Inisialisasi koordinat bola | Windu | 
